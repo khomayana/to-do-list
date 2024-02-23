@@ -1,0 +1,229 @@
+body,
+input,
+button,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Arial", "Helvetica Neue", Helvetica, sans-serif;
+    font: normal 400 15px/1.333 Inter;
+    background: #F2F5F7;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.to-do-list {
+    padding-top: 50px;
+}
+
+.to-do-body {
+    margin-bottom: 32px;
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+}
+
+.new-task-creator {
+    padding: 12px 16px 12px 32px;
+    border-bottom: 2px solid #DEDFE5;
+    box-shadow: 0px 1px 2px 0px #DEDFE5;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type='text'] {
+    display: block;
+    width: 80%;
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+input[type='text']:active {
+    outline: none;
+}
+
+.add-new-task {
+    position: relative;
+    padding: 11px 18px 11px 36px;
+    color: white;
+    background: #00AE1C;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+}
+
+.add-new-task::after {
+    position: absolute;
+    left: 15px;
+    width: 16px;
+    height: 16px;
+    background-image: url(./img/plus.svg);
+    content: '';
+}
+
+.to-do-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 16px 37px;
+}
+
+.task {
+    position: relative;
+    display: flex;
+    padding: 16px;
+    background: #FFF;
+    border: 1px solid #DEDFE5;
+    border-radius: 8px;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+}
+
+.task:hover {
+    background: #EFEFEF;
+}
+
+.task:focus-within {
+    background: none;
+}
+
+input[type='checkbox'] {
+    position: relative;
+    min-width: 12px;
+    height: 12px;
+    margin: 4px 16px 0 0;
+    border: 1.75px solid #323749;
+    border-radius: 2px;
+    appearance: none;
+}
+
+label {
+    padding: 0 0 0 16px;
+    color: #323749;
+    border-left: 1px solid #DEDFE5;
+    overflow-wrap: anywhere;
+}
+
+input[type='checkbox']:checked {
+    position: relative;
+    background: #00AE1C;
+    border-color: #00AE1C;
+}
+
+input[type='checkbox']:checked:after {
+    position: absolute;
+    width: 3px;
+    height: 6px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: translate(47%, -11%) rotate(45deg);
+    content: '';
+}
+
+input[type='checkbox']:checked+label {
+    text-decoration: line-through;
+}
+
+.clean-list {
+    display: flex;
+    justify-content: center;
+}
+
+.clean {
+    position: relative;
+    padding: 10px 97px 10px 118px;
+    color: #323749;
+    background: #FFF;
+    border: 1px solid #DEDFE5;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+}
+
+.clean::after {
+    position: absolute;
+    left: 93px;
+    width: 16px;
+    height: 16px;
+    background-image: url(./img/clean-icon.svg);
+    transform: translateY(-5%);
+    content: '';
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.btn-delete,
+.btn-done,
+.btn-edit {
+    display: none;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-done,
+.btn-delete {
+    right: 16px;
+}
+
+.btn-edit {
+    background-repeat: no-repeat;
+    background-image: url(./img/edit-icon.svg);
+    right: 48px;
+    transform: translateY(8%);
+}
+
+.btn-done {
+    background-image: url(./img/done-icon.svg);
+}
+
+.btn-delete {
+    background-image: url(./img/clean-icon.svg);
+}
+
+.task:hover input[type='checkbox']:checked~.btn-edit {
+    display: none;
+}
+
+.task:hover>.btn-delete,
+.task:hover>.btn-edit {
+    display: block;
+}
+
+label[contenteditable='true'] {
+    border: none;
+    outline: none;
+}
+
+.task:focus-within>.btn-edit,
+.task:focus-within>.btn-delete {
+    display: none;
+}
+
+.task:focus-within>.btn-done {
+    display: block;
+}

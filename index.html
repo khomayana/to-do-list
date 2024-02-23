@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <title>To-do list</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="to-do-list">
+            <div class="to-do-body">
+                <div class="new-task-creator">
+                    <form data-form action="#">
+                        <input type="text" data-new-task-input placeholder="Type here to add a task...">
+                        <button class="add-new-task">Add</button>
+                    </form>
+                </div>
+                <div class="to-do-tasks" data-tasks-container>
+                </div>
+            </div>
+            <div class="clean-list">
+                <button class="clean" data-delete-all-tasks>Clear all tasks</button>
+            </div>
+        </div>
+        <template data-task-template>
+            <div class="task">
+                <input type="checkbox">
+                <label></label>
+                <button class="btn-delete"></button>
+                <button class="btn-done"></button>
+                <button class="btn-edit"></button>
+            </div>
+        </template>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
